@@ -8,6 +8,8 @@ class CsvWriter(object):
 
     def write_row(self, *values):
         for index, value in enumerate(values):
+            if ',' in value:
+                value = '"' + value + '"'
             self.file.write(value)
             if index < len(values) -1:
                 self.file.write(',')
