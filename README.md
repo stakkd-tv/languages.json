@@ -2,8 +2,6 @@
 
 ISO-639 language codes in CSV and JSON formats. Information scraped from https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 
-## Description
-
 
 ## Usage
 To just grab the data, head to the `data/` folder. `data.csv` contains the codes in csv format, `data.json` contains the data in json format.
