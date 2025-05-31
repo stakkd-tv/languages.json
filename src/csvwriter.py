@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 
-
 class CsvWriter(object):
-
     def __init__(self, file):  # Expects an open file
         self.file = file
 
@@ -10,6 +8,7 @@ class CsvWriter(object):
         for index, value in enumerate(values):
             if ',' in value:
                 value = '"' + value + '"'
+            value = value.replace("\n", " ")
             self.file.write(value)
             if index < len(values) -1:
                 self.file.write(',')
