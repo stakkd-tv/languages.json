@@ -3,6 +3,7 @@ import re
 import os
 import requests
 import json
+import sys
 from typing import Callable, Optional
 from lxml import html
 from csvwriter import CsvWriter
@@ -74,6 +75,9 @@ def write_json(file_path: str, languages: list):
 
 print("Getting language info from Wikipedia")
 languages = get_language_details()
+if len(languages) == 0:
+    print("NO LANGUAGES FOUND")
+    sys.exit(1)
 
 print("Writing csv file")
 write_csv(csv_path, languages)
