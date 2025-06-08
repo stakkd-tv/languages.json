@@ -1,4 +1,4 @@
-name: Sync figures with Wikipedia
+name: Sync languages
 
 on:
   workflow_dispatch:
