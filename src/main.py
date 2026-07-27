@@ -40,7 +40,13 @@ def get_cell_text(cells: list, index: int, parser: Optional[Callable[[str], str]
     return text
 
 def get_language_details() -> list:
-    res = requests.get('https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes')
+    headers = {
+        "User-Agent": "StakkdLanguages/1.0 (https://github.com/stakkd-tv/languages.json)"
+    }
+    res = requests.get(
+        "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes",
+        headers=headers
+    )
     content = html.fromstring(res.content)
 
     languages = []
