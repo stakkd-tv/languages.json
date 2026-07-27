@@ -44,6 +44,8 @@ def get_language_details() -> list:
     content = html.fromstring(res.content)
 
     languages = []
+    print("Response:")
+    print(res.content)
     # TODO: Prevent IndexError being thrown. Maybe alert somehow?
     table = content.xpath('.//table[@data-x-id="Table"]')[0]
     for row in table.cssselect('tr'):
